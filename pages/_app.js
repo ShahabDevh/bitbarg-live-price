@@ -8,7 +8,7 @@ import { theme } from '../utils/muiTheme';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 
-import '../styles/globals.css';
+import '../public/css/globals.css';
 
 const queryClient = new QueryClient();
 

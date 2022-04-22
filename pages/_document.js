@@ -5,7 +5,7 @@ export default function Document() {
 		<Html lang="fa">
 			<Head>
 				<link
-					href="fonts/IRANSans/iransans.css"
+					href="/fonts/IRANSans/iransans.css"
 					rel="preload"
 					as="font"
 					crossOrigin=""
