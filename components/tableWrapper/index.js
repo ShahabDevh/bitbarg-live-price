@@ -16,9 +16,9 @@ function TableWrapper() {
 	const createQuery = useCallback(
 		pageParam => {
 			const q = query.length ? `&q=${query}` : '';
-			const sort = typeof sort === 'number' ? `&sort=${sort}` : '';
+			const s = typeof sort === 'number' ? `&sort=${sort}` : '';
 
-			return `?page=${pageParam}${q}${sort}`;
+			return `?page=${pageParam}${q}${s}`;
 		},
 		[query, sort]
 	);
