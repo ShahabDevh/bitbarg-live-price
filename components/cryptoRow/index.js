@@ -59,18 +59,17 @@ function CryptoRow({ data, coinIndex, currentCurrency }) {
 				<CellTradePrice className="col-30">
 					{unitPrice === 'tether' ? (
 						<>
-							<AttachMoneyRoundedIcon fontSize="14px" />
 							<Typography variant="body1" component="span">
-								{data.price}
+								{data.quote} USDT
 							</Typography>
 						</>
 					) : (
 						<>
-							<Typography variant="body1" component="span" className="toman-unit">
-								تومان
-							</Typography>
 							<Typography variant="body1" component="span">
 								{data.price * currentCurrency.sell}
+							</Typography>
+							<Typography variant="body1" component="span" className="toman-unit">
+								تومان
 							</Typography>
 						</>
 					)}

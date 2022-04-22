@@ -11,7 +11,7 @@ import CryptoRow from '../cryptoRow';
 function TableWrapper() {
 	const { ref, inView } = useInView();
 
-	const { query, sort } = useSelector(store => store.filterReducer);
+	const { query, sort, unitPrice } = useSelector(store => store.filterReducer);
 
 	const createQuery = useCallback(
 		pageParam => {
@@ -34,6 +34,7 @@ function TableWrapper() {
 
 					return nextPage <= finalPageNumber ? nextPage : undefined;
 				},
+				refetchInterval: 30 * 1000,
 			}
 		);
 
@@ -62,10 +63,10 @@ function TableWrapper() {
 					ارز دیجیتال
 				</Typography>
 				<Typography variant="body1" component="span" className="table-cell-30">
-					قیمت خرید
+					{unitPrice === 'toman' ? ' قیمت خرید' : 'قیمت جهانی'}
 				</Typography>
 				<Typography variant="body1" component="span" className="table-cell-30">
-					قیمت فروش
+					{unitPrice === 'toman' ? ' قیمت فروش' : 'ارزش بازار'}
 				</Typography>
 
 				<Typography variant="body1" component="span" className="table-cell-148p">
